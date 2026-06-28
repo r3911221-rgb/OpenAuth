@@ -1,7 +1,7 @@
 # OpenAuth
 
 [![Build Status](https://github.com/OpenAuth/OpenAuth/actions/workflows/build.yml/badge.svg)](https://github.com/OpenAuth/OpenAuth/actions)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 A highly secure, privacy-focused, open-source two-factor authentication (2FA) application for Android.
 
