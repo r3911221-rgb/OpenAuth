@@ -1,0 +1,48 @@
+/*
+ * Copyright (c) 2026 OpenAuth Authenticator
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package io.openauth.authenticator.core.crypto.util
+
+private const val HEX = "0123456789abcdef"
+
+fun ByteArray.toHex(): String {
+    return buildString(size * 2) {
+        for (byte in this@toHex) {
+            val value = byte.toInt() and 0xFF
+            append(HEX[value ushr 4])
+            append(HEX[value and 0x0F])
+        }
+    }
+}
+
+fun String.hexToByteArray(): ByteArray {
+    val value = trim()
+    require(value.length % 2 == 0) { "Hex length must be even" }
+
+    val result = ByteArray(value.length / 2)
+
+    for (i in result.indices) {
+        val index = i * 2
+        val high = Character.digit(value[index], 16)
+        val low = Character.digit(value[index + 1], 16)
+
+        require(high >= 0 && low >= 0) { "Invalid hex character" }
+
+        result[i] = ((high shl 4) or low).toByte()
+    }
+
+    return result
+}
