@@ -1,0 +1,49 @@
+/*
+ * Copyright (c) 2026 OpenAuth Authenticator
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package io.openauth.authenticator.core.crypto.backup
+
+import io.openauth.authenticator.core.crypto.cipher.CipherProvider
+import io.openauth.authenticator.core.crypto.di.DefaultKdf
+import io.openauth.authenticator.core.crypto.kdf.KeyDerivationFunction
+import io.openauth.authenticator.core.crypto.model.CryptoConstants
+import io.openauth.authenticator.core.crypto.random.SecureRandomProvider
+import javax.inject.Inject
+
+class VaultExporter @Inject constructor(
+    private val cipher: CipherProvider,
+    @DefaultKdf private val kdf: KeyDerivationFunction,
+    private val random: SecureRandomProvider
+) {
+    fun export(plaintext: ByteArray, password: CharArray): BackupCipherSpec {
+        require(plaintext.isNotEmpty()) { "Plaintext cannot be empty" }
+
+        val salt = random.nextBytes(CryptoConstants.KDF_SALT_SIZE_BYTES)
+        val key = kdf.derive(password, salt, CryptoConstants.AES_KEY_SIZE_BYTES)
+
+        return try {
+            val result = cipher.encrypt(key, plaintext)
+            BackupCipherSpec(
+                BackupFormatVersion.CURRENT,
+                kdf.algorithm,
+                salt,
+                result
+            )
+        } finally {
+            key.fill(0)
+        }
+    }
+}
