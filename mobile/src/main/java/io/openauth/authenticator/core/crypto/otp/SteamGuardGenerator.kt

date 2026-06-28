@@ -1,0 +1,71 @@
+/*
+ * Copyright (c) 2026 OpenAuth Authenticator
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package io.openauth.authenticator.core.crypto.otp
+
+import io.openauth.authenticator.core.crypto.hashing.HmacProvider
+import java.time.Clock
+import java.time.Instant
+import javax.inject.Inject
+
+class SteamGuardGenerator @Inject constructor(
+    private val hmacProvider: HmacProvider,
+    private val clock: Clock
+) {
+
+    fun generate(
+        secret: ByteArray,
+        instant: Instant = clock.instant()
+    ): String {
+        require(secret.isNotEmpty()) { "Steam Guard secret cannot be empty" }
+
+        val counter = instant.epochSecond / 30
+        val hash = hmacProvider.compute(
+            algorithm = OtpAlgorithm.SHA1,
+            key = secret,
+            message = counter.toBigEndianBytes()
+        )
+
+        var value = dynamicTruncate(hash).toLong()
+
+        return buildString(CODE_LENGTH) {
+            repeat(CODE_LENGTH) {
+                append(ALPHABET[(value % ALPHABET.length).toInt()])
+                value /= ALPHABET.length
+            }
+        }
+    }
+
+    private fun dynamicTruncate(hash: ByteArray): Int {
+        require(hash.size >= 16)
+        val offset = hash.last().toInt() and 0x0F
+        return ((hash[offset].toInt() and 0x7F) shl 24) or
+               ((hash[offset + 1].toInt() and 0xFF) shl 16) or
+               ((hash[offset + 2].toInt() and 0xFF) shl 8) or
+               (hash[offset + 3].toInt() and 0xFF)
+    }
+
+    private fun Long.toBigEndianBytes(): ByteArray {
+        return ByteArray(8) { index ->
+            ((this ushr (56 - index * 8)) and 0xFF).toByte()
+        }
+    }
+
+    companion object {
+        private const val CODE_LENGTH = 5
+        private const val ALPHABET = "23456789BCDFGHJKMNPQRTVWXY"
+    }
+}
