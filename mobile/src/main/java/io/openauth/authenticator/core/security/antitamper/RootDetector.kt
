@@ -1,0 +1,53 @@
+/*
+ * Copyright (c) 2026 OpenAuth Authenticator
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package io.openauth.authenticator.core.security.antitamper
+
+import android.os.Build
+import java.io.File
+import javax.inject.Inject
+import javax.inject.Singleton
+
+@Singleton
+class RootDetector @Inject constructor() {
+
+    private val suspiciousPaths = listOf(
+        "/system/bin/su",
+        "/system/xbin/su",
+        "/sbin/su",
+        "/system/app/Superuser.apk",
+        "/system/app/SuperSU.apk",
+        "/data/adb/magisk",
+        "/data/adb/magisk.img",
+        "/su/bin/su"
+    )
+
+    fun isRooted(): Boolean {
+        return hasSuBinary() || hasDangerousFiles() || hasTestKeys()
+    }
+
+    private fun hasSuBinary(): Boolean {
+        return suspiciousPaths.any { File(it).exists() }
+    }
+
+    private fun hasDangerousFiles(): Boolean {
+        return File("/data/adb").exists()
+    }
+
+    private fun hasTestKeys(): Boolean {
+        return Build.TAGS?.contains("test-keys") == true
+    }
+}
