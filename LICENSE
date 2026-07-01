@@ -1,201 +1,303 @@
-                                 Apache License
-                           Version 2.0, January 2004
-                        http://www.apache.org/licenses/
+OPEN SOURCE LICENSE — OPEN AUTHENTICATOR
+==========================================
 
-   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+Version 1.0, July 2026
+Copyright (c) 2026 OpenAuth Authenticator Project
 
-   1. Definitions.
 
-      "License" shall mean the terms and conditions for use, reproduction,
-      and distribution as defined by Sections 1 through 9 of this document.
+1. PREAMBLE
+-----------
 
-      "Licensor" shall mean the copyright owner or entity authorized by
-      the copyright owner that is granting the License.
+This license governs the use, reproduction, modification, and distribution
+of the OpenAuth Authenticator software ("the Software"), an open-source
+two-factor authentication application for Android devices. By obtaining,
+using, or distributing the Software, you accept and agree to be bound by
+the terms and conditions of this license.
 
-      "Legal Entity" shall mean the union of the acting entity and all
-      other entities that control, are controlled by, or are under common
-      control with that entity. For the purposes of this definition,
-      "control" means (i) the power, direct or indirect, to cause the
-      direction or management of such entity, whether by contract or
-      otherwise, or (ii) ownership of fifty percent (50%) or more of the
-      outstanding shares, or (iii) beneficial ownership of such entity.
+The OpenAuth Authenticator Project ("the Project") is committed to
+providing a secure, privacy-respecting, and transparent authenticator
+application. This license is designed to protect end users, contributors,
+and the integrity of the Software while promoting open collaboration.
 
-      "You" (or "Your") shall mean an individual or Legal Entity
-      exercising permissions granted by this License.
 
-      "Source" form shall mean the preferred form for making modifications,
-      including but not limited to software source code, documentation
-      source, and configuration files.
+2. DEFINITIONS
+--------------
 
-      "Object" form shall mean any form resulting from mechanical
-      transformation or translation of a Source form, including but
-      not limited to compiled object code, generated documentation,
-      and conversions to other media types.
+"Software" means the source code, object code, documentation, resources,
+and all associated materials contained in the OpenAuth Authenticator
+repository.
 
-      "Work" shall mean the work of authorship, whether in Source or
-      Object form, made available under the License, as indicated by a
-      copyright notice that is included in or attached to the work
-      (an example is provided in the Appendix below).
+"Contributor" means any individual or entity that submits code,
+documentation, or other materials to the Project.
 
-      "Derivative Works" shall mean any work, whether in Source or Object
-      form, that is based on (or derived from) the Work and for which the
-      editorial revisions, annotations, elaborations, or other modifications
-      represent, as a whole, an original work of authorship. For the purposes
-      of this License, Derivative Works shall not include works that remain
-      separable from, or merely link (or bind by name) to the interfaces of,
-      the Work and Derivative Works thereof.
+"User" means any individual or entity that downloads, installs, or
+operates the Software.
 
-      "Contribution" shall mean any work of authorship, including
-      the original version of the Work and any modifications or additions
-      to that Work or Derivative Works thereof, that is intentionally
-      submitted to Licensor for inclusion in the Work by the copyright owner
-      or by an individual or Legal Entity authorized to submit on behalf of
-      the copyright owner. For the purposes of this definition, "submitted"
-      means any form of electronic, verbal, or written communication sent
-      to the Licensor or its representatives, including but not limited to
-      communication on electronic mailing lists, source code control systems,
-      and issue tracking systems that are managed by, or on behalf of, the
-      Licensor for the purpose of discussing and improving the Work, but
-      excluding communication that is conspicuously marked or otherwise
-      designated in writing by the copyright owner as "Not a Contribution."
+"Distribution" means any conveyance of the Software or derivative works
+to third parties.
 
-      "Contributor" shall mean Licensor and any individual or Legal Entity
-      on behalf of whom a Contribution has been received by Licensor and
-      subsequently incorporated within the Work.
+"Derivative Work" means any modification, enhancement, or adaptation of
+the Software, in whole or in part.
 
-   2. Grant of Copyright License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      copyright license to reproduce, prepare Derivative Works of,
-      publicly display, publicly perform, sublicense, and distribute the
-      Work and such Derivative Works in Source or Object form.
+"Vault" means the encrypted storage system containing user secrets,
+including but not limited to OTP secret keys, PIN hashes, and backup data.
 
-   3. Grant of Patent License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      (except as stated in this section) patent license to make, have made,
-      use, offer to sell, sell, import, and otherwise transfer the Work,
-      where such license applies only to those patent claims licensable
-      by such Contributor that are necessarily infringed by their
-      Contribution(s) alone or by combination of their Contribution(s)
-      with the Work to which such Contribution(s) was submitted. If You
-      institute patent litigation against any entity (including a
-      cross-claim or counterclaim in a lawsuit) alleging that the Work
-      or a Contribution incorporated within the Work constitutes direct
-      or contributory patent infringement, then any patent licenses
-      granted to You under this License for that Work shall terminate
-      as of the date such litigation is filed.
 
-   4. Redistribution. You may reproduce and distribute copies of the
-      Work or Derivative Works thereof in any medium, with or without
-      modifications, and in Source or Object form, provided that You
-      meet the following conditions:
+3. GRANT OF RIGHTS
+-------------------
 
-      (a) You must give any other recipients of the Work or
-          Derivative Works a copy of this License; and
+Subject to the terms and conditions of this license, each Contributor
+hereby grants you a perpetual, worldwide, non-exclusive, no-charge,
+royalty-free, irrevocable license to:
 
-      (b) You must cause any modified files to carry prominent notices
-          stating that You changed the files; and
+    a) Use the Software for personal, educational, or commercial purposes;
 
-      (c) You must retain, in the Source form of any Derivative Works
-          that You distribute, all copyright, patent, trademark, and
-          attribution notices from the Source form of the Work,
-          excluding those notices that do not pertain to any part of
-          the Derivative Works; and
+    b) Reproduce the Software in unmodified form for backup, archival,
+       or distribution purposes;
 
-      (d) If the Work includes a "NOTICE" text file as part of its
-          distribution, then any Derivative Works that You distribute must
-          include a readable copy of the attribution notices contained
-          within such NOTICE file, excluding those notices that do not
-          pertain to any part of the Derivative Works, in at least one
-          of the following places: within a NOTICE text file distributed
-          as part of the Derivative Works; within the Source form or
-          documentation, if provided along with the Derivative Works; or,
-          within a display generated by the Derivative Works, if and
-          wherever such third-party notices normally appear. The contents
-          of the NOTICE file are for informational purposes only and
-          do not modify the License. You may add Your own attribution
-          notices within Derivative Works that You distribute, alongside
-          or as an addendum to the NOTICE text from the Work, provided
-          that such additional attribution notices cannot be construed
-          as modifying the License.
+    c) Modify the Software and create derivative works;
 
-      You may add Your own copyright statement to Your modifications and
-      may provide additional or different license terms and conditions
-      for use, reproduction, or distribution of Your modifications, or
-      for any such Derivative Works as a whole, provided Your use,
-      reproduction, and distribution of the Work otherwise complies with
-      the conditions stated in this License.
+    d) Distribute the Software and derivative works in source or binary
+       form, provided that the conditions in Section 4 are met;
 
-   5. Submission of Contributions. Unless You explicitly state otherwise,
-      any Contribution intentionally submitted for inclusion in the Work
-      by You to the Licensor shall be under the terms and conditions of
-      this License, without any additional terms or conditions.
-      Notwithstanding the above, nothing herein shall supersede or modify
-      the terms of any separate license agreement you may have executed
-      with Licensor regarding such Contributions.
+    e) Sublicense the Software as part of a larger work, provided that
+       this license remains applicable to the Software portion.
 
-   6. Trademarks. This License does not grant permission to use the trade
-      names, trademarks, service marks, or product names of the Licensor,
-      except as required for reasonable and customary use in describing the
-      origin of the Work and reproducing the content of the NOTICE file.
 
-   7. Disclaimer of Warranty. Unless required by applicable law or
-      agreed to in writing, Licensor provides the Work (and each
-      Contributor provides its Contributions) on an "AS IS" BASIS,
-      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-      implied, including, without limitation, any warranties or conditions
-      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
-      PARTICULAR PURPOSE. You are solely responsible for determining the
-      appropriateness of using or redistributing the Work and assume any
-      risks associated with Your exercise of permissions under this License.
+4. CONDITIONS OF DISTRIBUTION
+------------------------------
 
-   8. Limitation of Liability. In no event and under no legal theory,
-      whether in tort (including negligence), contract, or otherwise,
-      unless required by applicable law (such as deliberate and grossly
-      negligent acts) or agreed to in writing, shall any Contributor be
-      liable to You for damages, including any direct, indirect, special,
-      incidental, or consequential damages of any character arising as a
-      result of this License or out of the use or inability to use the
-      Work (including but not limited to damages for loss of goodwill,
-      work stoppage, computer failure or malfunction, or any and all
-      other commercial damages or losses), even if such Contributor
-      has been advised of the possibility of such damages.
+When distributing the Software or any derivative work, you must:
 
-   9. Accepting Warranty or Additional Liability. While redistributing
-      the Work or Derivative Works thereof, You may choose to offer,
-      and charge a fee for, acceptance of support, warranty, indemnity,
-      or other liability obligations and/or rights consistent with this
-      License. However, in accepting such obligations, You may act only
-      on Your own behalf and on Your sole responsibility, not on behalf
-      of any other Contributor, and only if You agree to indemnify,
-      defend, and hold each Contributor harmless for any liability
-      incurred by, or claims asserted against, such Contributor by reason
-      of your accepting any such warranty or additional liability.
+    a) Include a complete copy of this license with the distribution;
 
-   END OF TERMS AND CONDITIONS
+    b) Retain all copyright, patent, trademark, and attribution notices
+       present in the original Software;
 
-   APPENDIX: How to apply the Apache License to your work.
+    c) Clearly indicate any modifications made to the Software, including
+       the date and nature of each modification;
 
-      To apply the Apache License to your work, attach the following
-      boilerplate notice, with the fields enclosed by brackets "[]"
-      replaced with your own identifying information. (Don't include
-      the brackets!)  The text should be enclosed in the appropriate
-      comment syntax for the file format. We also recommend that a
-      file or class name and description of purpose be included on the
-      same "printed page" as the copyright notice for easier
-      identification within third-party archives.
+    d) Ensure that any derivative work does not misrepresent its origin
+       or imply endorsement by the Project without explicit written
+       permission;
 
-   Copyright [yyyy] [name of copyright owner]
+    e) If distributing in binary form, provide access to the corresponding
+       source code under the same terms of this license;
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+    f) Not remove or disable any security features, encryption mechanisms,
+       or privacy protections present in the Software;
 
-       http://www.apache.org/licenses/LICENSE-2.0
+    g) Not use the name "OpenAuth" or any Project contributor names to
+       endorse or promote derivative works without prior written consent.
 
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+
+5. SECURITY AND PRIVACY OBLIGATIONS
+------------------------------------
+
+The Software implements cryptographic security measures to protect user
+data. Any distribution or derivative work must:
+
+    a) Maintain or exceed the security standards implemented in the
+       original Software, including but not limited to:
+
+       - AES-256-GCM encryption for all secret data
+       - Argon2id, Scrypt, or PBKDF2 key derivation with minimum
+         iteration counts as specified in security documentation
+       - Android Keystore hardware-backed key storage where available
+       - Biometric authentication binding with invalidation on enrollment
+         changes
+       - Automatic clipboard clearing with IS_SENSITIVE flag on
+         supported platforms
+       - Memory wiping of cryptographic material after use
+
+    b) Not introduce telemetry, analytics, tracking, or any data
+       collection mechanism that transmits user data off-device without
+       explicit, informed user consent;
+
+    c) Not introduce backdoors, master keys, or any mechanism that
+       weakens the cryptographic protections of the Vault;
+
+    d) Clearly disclose any network communication initiated by the
+       Software and obtain user consent before transmission;
+
+    e) Maintain the zero-knowledge architecture where the service provider
+       cannot access user secrets under any circumstances.
+
+
+6. PATENT GRANT
+---------------
+
+Each Contributor grants you a perpetual, worldwide, non-exclusive,
+no-charge, royalty-free, irrevocable patent license to make, use, sell,
+offer for sale, import, and otherwise transfer the Software. This license
+applies only to patent claims licensable by the Contributor that are
+necessarily infringed by their contribution alone or in combination with
+the Software.
+
+
+7. TRADEMARK AND BRANDING
+--------------------------
+
+This license does not grant permission to use the trade names, trademarks,
+service marks, or product names of the Project or its Contributors.
+The "OpenAuth" name and associated branding elements may only be used
+as specified in a separate branding policy available from the Project.
+
+
+8. TERMINATION
+--------------
+
+This license and the rights granted hereunder terminate automatically
+if you fail to comply with any term or condition. Upon termination,
+you must:
+
+    a) Cease all use of the Software;
+
+    b) Destroy all copies of the Software in your possession;
+
+    c) If you have distributed derivative works, make reasonable efforts
+       to notify recipients of the termination.
+
+Sections 5, 7, 9, 10, and 11 survive termination of this license.
+
+
+9. DISCLAIMER OF WARRANTY
+--------------------------
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
+
+THE PROJECT AND CONTRIBUTORS DO NOT WARRANT THAT THE SOFTWARE WILL
+FUNCTION UNINTERRUPTED, SECURE, OR ERROR-FREE, OR THAT DEFECTS WILL BE
+CORRECTED. YOU ASSUME FULL RESPONSIBILITY FOR SELECTING AND USING THE
+SOFTWARE TO ACHIEVE YOUR INTENDED RESULTS.
+
+THE PROJECT AND CONTRIBUTORS SPECIFICALLY DISCLAIM ANY WARRANTY THAT
+THE SOFTWARE WILL PROTECT AGAINST ALL SECURITY THREATS, INCLUDING BUT
+NOT LIMITED TO ROOTED DEVICES, EMULATORS, DEBUGGERS, SCREEN CAPTURE,
+KEYLOGGERS, OR ANY OTHER FORM OF ATTACK OR COMPROMISE.
+
+
+10. LIMITATION OF LIABILITY
+----------------------------
+
+IN NO EVENT SHALL THE PROJECT OR ANY CONTRIBUTOR BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES, INCLUDING BUT NOT LIMITED TO:
+
+    a) LOSS OF ACCESS TO ACCOUNTS OR SERVICES;
+    b) LOSS OF DATA OR SECRETS;
+    c) IDENTITY THEFT OR UNAUTHORIZED ACCOUNT ACCESS;
+    d) LOSS OF PROFITS, REVENUE, OR BUSINESS OPPORTUNITY;
+    e) COST OF PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+    f) ANY OTHER COMMERCIAL DAMAGES OR LOSSES;
+
+ARISING OUT OF OR RELATING TO THE USE OR INABILITY TO USE THE SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND REGARDLESS OF
+THE THEORY OF LIABILITY (CONTRACT, TORT, NEGLIGENCE, STRICT LIABILITY,
+OR OTHERWISE).
+
+SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY
+FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES. IN SUCH JURISDICTIONS, THE
+ABOVE LIMITATIONS SHALL APPLY TO THE MAXIMUM EXTENT PERMITTED BY LAW.
+
+
+11. INDEMNIFICATION
+--------------------
+
+You agree to indemnify, defend, and hold harmless the Project and its
+Contributors from any claims, damages, liabilities, costs, and expenses
+(including reasonable legal fees) arising from:
+
+    a) Your use or misuse of the Software;
+    b) Your violation of this license;
+    c) Your violation of any third-party rights;
+    d) Any derivative work you create or distribute.
+
+
+12. GOVERNING LAW AND DISPUTE RESOLUTION
+-----------------------------------------
+
+This license shall be governed by and construed in accordance with the
+laws of India, without regard to conflict of law principles. Any dispute
+arising out of or relating to this license shall be subject to the
+exclusive jurisdiction of the courts located in India.
+
+The parties shall first attempt to resolve any dispute through good faith
+negotiations for a period of thirty (30) days before initiating any
+legal proceedings.
+
+
+13. SEVERABILITY
+-----------------
+
+If any provision of this license is held to be invalid, illegal, or
+unenforceable by a court of competent jurisdiction, the remaining
+provisions shall continue in full force and effect. The invalid
+provision shall be replaced by a valid provision that most closely
+reflects the original intent of the parties.
+
+
+14. CONTRIBUTION POLICY
+------------------------
+
+Contributions to the Software are welcome and encouraged. By submitting
+a contribution, you agree that:
+
+    a) Your contribution is your original work or you have the legal
+       right to submit it;
+
+    b) Your contribution is licensed under the same terms as this license;
+
+    c) You grant the Project a perpetual, worldwide, non-exclusive,
+       royalty-free license to use, reproduce, modify, and distribute
+       your contribution;
+
+    d) You waive any moral rights you may have in your contribution
+       to the extent permitted by applicable law.
+
+
+15. THIRD-PARTY COMPONENTS
+----------------------------
+
+The Software may include components licensed under separate terms,
+including but not limited to Bouncy Castle (MIT License), SQLCipher
+(BSD-style License), AndroidX libraries (Apache 2.0), and others.
+Each third-party component is governed by its own license terms,
+which are included in the Software distribution.
+
+
+16. EXPORT COMPLIANCE
+----------------------
+
+The Software may be subject to export control laws and regulations.
+You agree to comply with all applicable export and re-export control
+laws, including the Export Administration Regulations maintained by
+the relevant authorities. You represent that you are not located in,
+under the control of, or a national or resident of any country subject
+to embargo or trade sanctions.
+
+
+17. MISCELLANEOUS
+------------------
+
+This license constitutes the entire agreement between the parties
+concerning the Software and supersedes all prior agreements. No waiver
+of any provision shall be deemed a further or continuing waiver. The
+section headings are for convenience only and shall not affect the
+interpretation of this license.
+
+
+18. CONTACT
+-----------
+
+For questions, permissions, or inquiries regarding this license,
+please contact the OpenAuth Authenticator Project through the official
+repository channels.
+
+    Repository: https://github.com/openauth/authenticator
+    Email: license@openauth.app
+
+
+END OF LICENSE
